@@ -14,7 +14,7 @@ const Table = ({ sat }) => {
         <tbody>
           {sat.map((data, id) => {
             return (
-              <tr>
+              <tr key={id}>
                 <td>{data.name}</td>
                 <td>{data.type}</td>
                 <td>{data.launchDate}</td>
@@ -26,18 +26,5 @@ const Table = ({ sat }) => {
       </table>
   );
 };
-
-// return (
-//   <div>
-//     {displaySats.map((sat, id) => {
-//       return (
-//         <button onClick={() => filterByType(sat)} key={id}>
-//           {sat} Orbit
-//         </button>
-//       );
-//     })}
-//     <button onClick={() => setSat(satData)}>All Orbits</button>
-//     </div>
-// );
 
 export default Table;
