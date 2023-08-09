@@ -1,18 +1,43 @@
+import "./styling.css"
+
 const Table = ({ sat }) => {
   return (
       <table>
        <thead>
         <tr>
-          <th>Header TBD</th>
+          <th>Name</th>
+          <th>Type of Satellite</th>
+          <th>Launch Date</th>
+          <th>Status</th>
         </tr>
         </thead>
         <tbody>
-        <tr>
-          <td>Row Data TBD</td>
-        </tr>
+          {sat.map((data, id) => {
+            return (
+              <tr>
+                <td>{data.name}</td>
+                <td>{data.type}</td>
+                <td>{data.launchDate}</td>
+                <td>{data.operational === true ? 'Active' : 'Inactive'}</td>
+              </tr>
+            )
+          })}
         </tbody>
       </table>
   );
 };
+
+// return (
+//   <div>
+//     {displaySats.map((sat, id) => {
+//       return (
+//         <button onClick={() => filterByType(sat)} key={id}>
+//           {sat} Orbit
+//         </button>
+//       );
+//     })}
+//     <button onClick={() => setSat(satData)}>All Orbits</button>
+//     </div>
+// );
 
 export default Table;
